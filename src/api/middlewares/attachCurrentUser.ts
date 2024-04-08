@@ -5,9 +5,6 @@ import { Logger } from 'winston';
 
 /**
  * Attach user to req.currentUser
- * @param {*} req Express req Object
- * @param {*} res  Express res Object
- * @param {*} next  Express next Function
  */
 const attachCurrentUser = async (req, res, next) => {
   const Logger : Logger = Container.get('logger');

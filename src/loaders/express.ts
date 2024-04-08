@@ -1,6 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-import { OpticMiddleware } from '@useoptic/express-middleware';
 import routes from '@/api';
 import config from '@/config';
 export default ({ app }: { app: express.Application }) => {
@@ -31,13 +30,15 @@ export default ({ app }: { app: express.Application }) => {
 
   // Transforms the raw string of req.body into json
   app.use(express.json());
+  //Transforms the raw string of req.body form data into object 
+  app.use(express.urlencoded({ extended: true }));
+
+  //@TODO implement helmet for addtl security
+
   // Load API routes
   app.use(config.api.prefix, routes());
 
-  // API Documentation
-  app.use(OpticMiddleware({
-      enabled: process.env.NODE_ENV !== 'production',
-  }));
+  // API Documentation - have a separate loader for swagger
 
   /// catch 404 and forward to error handler
   app.use((req, res, next) => {

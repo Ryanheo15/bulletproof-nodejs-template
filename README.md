@@ -9,6 +9,23 @@ Also, I added lots of comments to the code that are not in the blog post, becaus
 The API by itself doesn't do anything fancy, it's just a user CRUD with authentication capabilities.
 Maybe we can transform this into something useful, a more advanced example, just open an issue and let's discuss the future of the repo.
 
+# Note 
+
+This is a simplified version of the bulletprooof node.js architecture. There are a few sections / features that have been removed. 
+
+## Removed features:
+Will not be using jobs / agenda.js:
+  - Completely removed agenda set up in loaders section:
+    - Modified init code index.ts for loaders
+    - Removed agenda.ts (which inits agenda the library) file in loaders
+    - Removed jobs.ts (which basically sets up any jobs you will be using with agenda)
+    - Removed agent.js and agendash configs in the config file
+  - Completely removed jobs folder which contains the actual cron job contents
+  - Completely removed agendash.ts from routes folder
+
+Will not be using optic as we will be using swagger instead of api documemntation 
+
+
 ## Development
 
 We use `node` version `14.9.0`

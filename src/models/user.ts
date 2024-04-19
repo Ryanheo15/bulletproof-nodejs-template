@@ -28,4 +28,5 @@ const User = new mongoose.Schema(
   { timestamps: true },
 );
 
+//Creation of the model with the name of default when importing
 export default mongoose.model<IUser & mongoose.Document>('User', User);

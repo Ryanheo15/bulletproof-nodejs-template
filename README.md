@@ -13,6 +13,18 @@ Maybe we can transform this into something useful, a more advanced example, just
 
 This is a simplified version of the bulletprooof node.js architecture. There are a few sections / features that have been removed. 
 
+## Flow
+General flow that should be followed when starting a new project with this template
+
+1. Start defining the models
+2. Declare the interfaces
+3. Define types
+4. Loaders
+5. Middelwares
+6. Routes 
+7. Services
+8. Tests
+
 ## Removed features:
 Will not be using jobs / agenda.js:
   - Completely removed agenda set up in loaders section:

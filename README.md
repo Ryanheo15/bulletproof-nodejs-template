@@ -16,6 +16,7 @@ This is a simplified version of the bulletprooof node.js architecture. There are
 ## Flow
 General flow that should be followed when starting a new project with this template
 
+0. Set up the environment variables
 1. Start defining the models
 2. Declare the interfaces
 3. Define types
